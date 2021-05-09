@@ -37,7 +37,12 @@ if($jres){
     $resultat2 = do_get('https://discord.com/api/v8/oauth2/@me', "authorization: Bearer $access");
     $jsobj=false;
     if($resultat2){
-    try{$jsobj=JSON_decode($resultat2); $username=str_replace("<","&lt;",$jsobj->user->username); echo "<center><h1>Welcome to Discord sync, ". $username ."!</h1></center>";$id=str_replace(".","",str_replace("<","&lt;",$jsobj->user->id));file_put_contents("./discord/$id","1");http_response_code(301);}catch(Exception $e){}
+     try{$jsobj=JSON_decode($resultat2); $username=str_replace("<","&lt;",$jsobj->user->username); 
+        echo "<center><h1>Welcome to Discord sync, ". $username ."!</h1></center>";
+        $id=str_replace(".","",str_replace("<","&lt;",$jsobj->user->id));
+        file_put_contents("./discord/$id","1");
+        http_response_code(301);
+     }catch(Exception $e){}
     }else{echo "Failed.";}
 }
 }else{echo "Failed.";}
