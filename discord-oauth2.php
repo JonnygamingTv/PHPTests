@@ -1,5 +1,5 @@
 <?php
-header('Location: https://discord.gg/');http_response_code(302);
+header('Location: https://JonHosting.com/');http_response_code(302);
 if(isset($_GET["code"])){$cid = "client_id";$secret = "client_secret";$redirect_url = "https://JonHosting.com";
 function do_post(string $url,string $params):string {
     $options = array(
